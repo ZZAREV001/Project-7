@@ -17,18 +17,24 @@ import java.sql.Timestamp;
 @Setter
 public class CurvePoint {
     // TODO: Map columns in data table CURVEPOINT with corresponding java fields
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
 
+    @Column(name = "curve_id")
     private Integer curveId;
 
-    private Timestamp asOfDate;
+    @Column(name = "term")
+    private Double term;
 
-    private double term;
+    @Column(name = "value")
+    private Double value;
 
-    private double value;
-
-    private Timestamp creationDate;
-
-    public CurvePoint(int i, double v, double v1) {
+    public CurvePoint(int curveId, double term, double value) {
+        this.curveId = curveId;
+        this.term = term;
+        this.value = value;
     }
+
 }
