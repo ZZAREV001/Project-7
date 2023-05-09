@@ -40,4 +40,13 @@ public class RuleName {
     @Column(name = "sql_part")
     private String sqlPart;
 
+    public RuleName(String ruleName, String description, String json,
+                    String template, String sql, String sqlPart) {
+        this.name = ruleName;
+        this.description = description;
+        this.json = json;
+        this.template = template;
+        this.sqlStr = sql;
+        this.sqlPart = sqlPart;
+    }
 }
